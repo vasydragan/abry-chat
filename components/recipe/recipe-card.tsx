@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/card"
 import { macroInfo, recipeInfo } from "@/components/recipe/recipe-constants"
 import { SaveRecipeButton } from "@/components/recipe/save-recipe-button"
+import { ClockIcon, MapPinIcon } from "lucide-react"
 
 interface GeneratedRecipeContentProps {
   recipe: Recipe
@@ -111,6 +112,19 @@ export function RecipeCard({ recipe }: GeneratedRecipeContentProps) {
                       <h3 className="text-lg font-semibold mb-2">{shoe.title}</h3>
                       <p className="text-sm text-gray-500 mb-1">Shop: {shoe.shop}</p>
                       <p className="text-sm text-gray-700 mb-2">Price: €{shoe.price}</p>
+
+                      <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+                        <div className="flex items-center">
+                          <MapPinIcon className="h-5 w-5 text-gray-400 mr-1" />
+                          {/* @ts-ignore */}
+                          <span>{shoe.distance_from_me} km away</span>
+                        </div>
+                        <div className="flex items-center">
+                          <ClockIcon className="h-5 w-5 text-gray-400 mr-1" />
+                          {/* @ts-ignore */}
+                          <span>Open: {shoe.opening_hours}</span>
+                        </div>
+                      </div>
                       <a
                         href="#"
                         className="text-blue-600 hover:underline text-sm"

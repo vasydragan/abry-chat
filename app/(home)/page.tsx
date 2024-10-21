@@ -16,7 +16,7 @@ export default async function IndexPage() {
         <RecipesCounter />
         <PageHeaderHeading>
           <span className="bg-gradient-to-r from-violet-500 to-teal-300 bg-clip-text text-transparent">
-            {"Abrey"}
+            {"Abry"}
           </span> Shopping Assistant.
         </PageHeaderHeading>
         <PageHeaderDescription>

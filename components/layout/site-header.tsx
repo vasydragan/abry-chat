@@ -24,9 +24,8 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ user }: SiteHeaderProps) {
-  const initials = `${user?.firstName?.charAt(0) ?? ""} ${
-    user?.lastName?.charAt(0) ?? ""
-  }`
+  const initials = `${user?.firstName?.charAt(0) ?? ""} ${user?.lastName?.charAt(0) ?? ""
+    }`
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -98,22 +97,6 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                 </Link>
               </>
             )}
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "sm",
-                  variant: "ghost",
-                  className: "md:ml-3",
-                })}
-              >
-                <Icons.gitHub className="size-4 md:size-5" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
             <ThemeToggle />
           </nav>
         </div>

@@ -49,7 +49,7 @@ export function RecipeForm({ onSubmit, isLoading }: RecipeFormProps) {
               {showAdditionalFields && (
                 <RecipeFormLabel
                   stepIndex="1"
-                  labelIndex="What sneakers are you looking for?"
+                  labelIndex="What are you looking for today?"
                 />
               )}
               <FormControl>

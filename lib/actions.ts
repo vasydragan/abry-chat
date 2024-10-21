@@ -25,7 +25,6 @@ export async function saveGeneration(generatedRecipe) {
     paleo: generatedRecipe.paleo,
     description: generatedRecipe.description,
     calories: generatedRecipe.calories,
-    proteins: generatedRecipe.macros.protein,
     fats: generatedRecipe.macros.fats,
     carbs: generatedRecipe.macros.carbs,
   }

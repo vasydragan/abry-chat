@@ -2,10 +2,13 @@ import { FormData } from "@/types/types"
 import sampleData from './sample-data.json'
 
 export function generatePrompt(values: FormData): string {
+  
   return `
     You are an expert shopping assistant with a focus on sneakers and sports shoes. 
 
-       The following is a sample dataset of shops and shoes:
+    Please take this into account : ${values.ingredients}.
+
+    The following is a sample dataset of shops and shoes:
     ${JSON.stringify(sampleData)}
 
     Your task is to help the user find the best shoe options based on their preferences and location. 
