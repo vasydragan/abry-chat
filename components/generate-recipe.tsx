@@ -37,7 +37,8 @@ export function GenerateRecipe() {
       setFormValues(values)
       if (!completion) throw new Error("Failed to generate recipe. Try again.")
       try {
-        const result = JSON.parse(completion)
+        const result = JSON.parse(completion);
+        console.log(result)
         setRecipe(result)
       } catch (error) {
         console.error("Error parsing JSON:", error)

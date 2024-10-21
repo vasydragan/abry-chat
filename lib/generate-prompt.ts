@@ -1,63 +1,48 @@
 import { FormData } from "@/types/types"
+import sampleData from './sample-data.json'
 
 export function generatePrompt(values: FormData): string {
-  const dietRestrictions = `
-    - Low-calorie: ${values.low_calori ? "Yes" : "No"}
-    - Vegan: ${values.vegan ? "Yes" : "No"}
-    - Paleo: ${values.paleo ? "Yes" : "No"}
-  `
   return `
-    You are an expert culinary chef who has cooked for the best restaurants in the world.
-    Craft a delightful, creative and unique recipe with the following considerations:
+    You are an expert shopping assistant with a focus on sneakers and sports shoes. 
+
+       The following is a sample dataset of shops and shoes:
+    ${JSON.stringify(sampleData)}
+
+    Your task is to help the user find the best shoe options based on their preferences and location. 
+    Generate a list of shoes available in local shops within the user's specified radius and based on their shop preferences.
 
     Rules:
       - Response must be in JSON format.
-      - Recipe must have a creative Title.
-      - Include detailed instructions with estimated cooking times for each step.
-      - Adhere to the following dietary preferences: ${dietRestrictions}
-      - Utilize only the available ingredients (${values.ingredients}).
-        Avoid incompatible ingredients based on the specified diet.
-      - Ensure the cooking time is under ${values.cooking_time} minutes.
-      - Design the recipe to serve ${values.people} people.
-      - Evaluate the difficulty of execution as ${values.difficulty}.
-      - Recipe must have a short description.
-      - Be creative with the cooking techniques and flavor combinations
-      - Feel free to incorporate herbs and spices for an extra burst of flavor
+      - Only include shoes available at shops within a radius of ${values.travelDistance} km from the user's location.
+      - Consider the user's shop preference for ${values.shopType} (options: "local shop", "store chain", or "big brand").
+      - Each shoe entry should include the following:
+        - "title": The name of the shoe (e.g., Nike Air Max, Adidas Ultraboost).
+        - "price": The price of the shoe in local currency.
+        - "shop": The name of the shop selling the shoe.
+        - "distance_to_shop": The distance from the user to the shop, measured in kilometers or miles.
+        - "opening_hours": The operating hours of the shop.
+        - "distance_from_me": How far the shop is from the user's location.
+        - "image_url": A link to an image of the shoe.
+        - "shop_url": A link to the shop where the user can purchase the shoe.
+      - Be sure to include a mix of well-known brands like Adidas, Nike, Jordan, and other popular sports brands based on the preferences provided.
+      - Format the response with shoe options ranked by proximity to the user and matching their store preference (local shop, chain, or big brand).
 
+    The JSON object must include the following structure:
 
-    The JSON object must include the following fields:
-    - "title": [string]
-    - "description": [string]
-    - "people": [number] (based on the provided input)
-    - "difficulty": [string] (based on the provided input)
-    - "cooking_time": [number] (based on the provided input)
-    - "low_calori": [string] (based on the provided input)
-    - "vegan": [string] (based on the provided input)
-    - "paleo": [string] (based on the provided input)
-    - "calories": [number],
-    - "macros": {"protein": [number], "fats": [number], "carbs": [number]},
-    - "ingredients": [{"name": [string], "amount": [string]}, ...] (based on the provided diet type and ingredients provided),
-    - "instructions": [{"step": [number], "description": [string]}, ...]
+    [
+      {
+        "title": /* string */,
+        "price": /* number */,
+        "shop": /* string */,
+        "distance_to_shop": /* number (in kilometers or miles) */,
+        "opening_hours": /* string (e.g., "9 AM - 7 PM") */,
+        "distance_from_me": /* number (in kilometers or miles) */,
+        "image_url": /* string (link to image) */,
+        "shop_url": /* string (link to shop) */
+      },
+      ...
+    ]
 
-    
-    Format the response as a valid JSON object with all fields filled. Here is the structure for reference:
-    
-    {
-      "title": /* details */,
-      "description":  /* details */,
-      "people":  /* details */,
-      "difficulty":  /* details */,
-      "cooking_time":  /* details */,
-      "low_calori":  /* details */,
-      "vegan":  /* details */, 
-      "paleo":  /* details */,
-      "calories":  /* details */,
-      "macros": { /* details */ },
-      "ingredients": { /* details */ },
-      "instructions": { /* details */ }
-    }
-    
-    Respond only with the completed JSON object, without any additional explanatory or descriptive text. The JSON should be complete and ready for parsing
-  
-  `
+    Format the response as a valid JSON object with all fields filled. Respond only with the completed JSON object without additional explanations.
+  `;
 }

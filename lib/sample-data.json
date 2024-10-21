@@ -1,0 +1,125 @@
+{
+  "shops": [
+    {
+      "name": "Foot Locker",
+      "distance_from_me": 2.5,
+      "opening_hours": "9 AM - 8 PM",
+      "shoes": [
+        {
+          "title": "Nike Air Max 270",
+          "price": 150,
+          "priceFluctuation": [
+            {
+              "date": "2024-01-01",
+              "price": 140
+            },
+            {
+              "date": "2024-02-01",
+              "price": 145
+            },
+            {
+              "date": "2024-03-01",
+              "price": 150
+            }
+          ],
+          "image_url": "https://s3.eu-west-2.amazonaws.com/static.searchablecities.com/GY9353_2_w_800_800px.jpg",
+          "shop_url": "https://example.com/shop/footlocker"
+        },
+        {
+          "title": "Adidas Ultraboost",
+          "price": 180,
+          "priceFluctuation": [
+            {
+              "date": "2024-01-01",
+              "price": 170
+            },
+            {
+              "date": "2024-02-01",
+              "price": 175
+            },
+            {
+              "date": "2024-03-01",
+              "price": 180
+            }
+          ],
+          "image_url": "https://s3.eu-west-2.amazonaws.com/static.searchablecities.com/gz79256.jpg",
+          "shop_url": "https://example.com/shop/footlocker"
+        }
+      ]
+    },
+    {
+      "name": "Adidas Store",
+      "distance_from_me": 1.8,
+      "opening_hours": "10 AM - 7 PM",
+      "shoes": [
+        {
+          "title": "Adidas Ultraboost",
+          "price": 180,
+          "priceFluctuation": [
+            {
+              "date": "2024-01-01",
+              "price": 165
+            },
+            {
+              "date": "2024-02-01",
+              "price": 170
+            },
+            {
+              "date": "2024-03-01",
+              "price": 180
+            }
+          ],
+          "image_url": "https://s3.eu-west-2.amazonaws.com/static.searchablecities.com/W%2BAIR%2BMAX%2B270.png",
+          "shop_url": "https://example.com/shop/adidas"
+        },
+        {
+          "title": "Adidas NMD",
+          "price": 170,
+          "priceFluctuation": [
+            {
+              "date": "2024-01-01",
+              "price": 160
+            },
+            {
+              "date": "2024-02-01",
+              "price": 165
+            },
+            {
+              "date": "2024-03-01",
+              "price": 170
+            }
+          ],
+          "image_url": "https://s3.eu-west-2.amazonaws.com/static.searchablecities.com/W%2BAIR%2BMAX%2B270.png",
+          "shop_url": "https://example.com/shop/adidas"
+        }
+      ]
+    },
+    {
+      "name": "Sneaker Haven",
+      "distance_from_me": 3.2,
+      "opening_hours": "11 AM - 9 PM",
+      "shoes": [
+        {
+          "title": "Jordan 1 Retro High",
+          "price": 200,
+          "priceFluctuation": [
+            {
+              "date": "2024-01-01",
+              "price": 190
+            },
+            {
+              "date": "2024-02-01",
+              "price": 195
+            },
+            {
+              "date": "2024-03-01",
+              "price": 200
+            }
+          ],
+          "image_url": "https://s3.eu-west-2.amazonaws.com/static.searchablecities.com/1-retro-high-og.jpg",
+          "shop_url": "https://example.com/shop/sneaker_haven"
+        }
+      ]
+    }
+  ]
+}

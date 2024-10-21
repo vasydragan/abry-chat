@@ -35,6 +35,29 @@ export async function saveGeneration(generatedRecipe) {
   revalidatePath("/")
 }
 
+export async function saveShoe(shoe) {
+  const supabase = await getSupabaseClient()
+  const userId = auth().userId
+
+  if (!userId) throw new Error("User ID not found")
+
+  const data = {
+    user_id: userId,
+    title: shoe.title,
+    price: shoe.price,
+    shop: shoe.shop,
+    distance_to_shop: shoe.distance_to_shop,
+    opening_hours: shoe.opening_hours,
+    distance_from_me: shoe.distance_from_me,
+    image_url: shoe.image_url,
+    shop_url: shoe.shop_url,
+  }
+
+  await supabase.from("shoes").insert([data])
+
+  revalidatePath("/dashboard/my-shoes")
+}
+
 export async function saveRecipe(generatedRecipe) {
   const supabase = await getSupabaseClient()
   const userId = auth().userId

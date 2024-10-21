@@ -12,30 +12,19 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chef-genie.app"),
+  metadataBase: new URL("https://searchablecities.com"),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "Chef GPT",
-    "Chef Genie",
-    "Recipe Generator",
-    "Recipe ChatGPT",
-    "Recipe AI",
-    "Chef AI",
-    "Meal generator",
-    "Cook GPT",
-    "Cooking generator",
+    "Abry GPT",
+    "Abry Genie",
+    "Abry AI",
   ],
-  authors: [
-    {
-      name: "faultyled",
-      url: "https://github.com/giacomogaglione",
-    },
-  ],
-  creator: "faultyled",
+
+  creator: "abry",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -57,7 +46,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@faultyled",
+    creator: "@abry",
   },
   icons: {
     icon: "/favicon.ico",
